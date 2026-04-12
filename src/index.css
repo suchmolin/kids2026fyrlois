@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-fyr-blue: #001a57;
+  --color-fyr-lime: #4cc401;
+  --color-fyr-orange: #ff9900;
+  --color-fyr-pink: #f62c82;
+  --color-fyr-green: #76c01e;
+  --color-fyr-navy-line: #001a72;
+  --font-eastman: 'Eastman', ui-sans-serif, system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Eastman';
+  src: url('/fonts/Eastman-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eastman';
+  src: url('/fonts/Eastman-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100dvh;
+  font-family: 'Eastman', ui-sans-serif, system-ui, sans-serif;
+}
