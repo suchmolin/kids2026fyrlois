@@ -8,16 +8,18 @@ import { KidsWhySection } from './components/KidsWhySection.jsx'
 
 function App() {
   return (
-    <div className="flex min-h-dvh flex-col bg-white">
+    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-white">
       <KidsSiteHeader />
 
-      <main className="flex-1 bg-white">
+      <main className="min-w-0 flex-1 bg-white">
         <KidsHeroSection />
         <KidsClassesCtaSection />
         <KidsMethodsSection />
         <KidsWhySection />
         <KidsTestimonialSection />
         <KidsLeadSection />
+        {/*
+        */}
       </main>
     </div>
   )

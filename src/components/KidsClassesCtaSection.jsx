@@ -14,34 +14,17 @@ function WhatsAppGlyph({ className }) {
   )
 }
 
-function PointerIcon({ className }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.75"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M14.5 3.5 3 14.5l4 1 2 5.5 3.5-2.5-2-5 4-1.5-10-8.5Z" />
-    </svg>
-  )
-}
-
 export function KidsClassesCtaSection() {
   return (
     <section
-      className="bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
+      className="overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20"
       aria-labelledby="kids-classes-cta-heading"
     >
-      <div className="mx-auto max-w-4xl">
-        <div className="-mx-4 px-4 sm:-mx-0 sm:px-0">
+      <div className="mx-auto">
+        <div className="sm:-mx-4 sm:px-4 sm:-mx-0 sm:px-0">
           <h2
             id="kids-classes-cta-heading"
-            className="font-eastman mx-auto flex w-max flex-col items-center gap-0 text-center text-xl font-bold leading-[1] tracking-tighter text-fyr-blue sm:text-2xl md:text-3xl lg:text-[1.65rem] xl:text-4xl"
+            className="font-eastman mx-auto w-max max-w-none text-center text-[0.6rem] min-[350px]:text-[0.65rem] min-[390px]:text-[0.75rem] font-bold leading-snug text-fyr-blue sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl [&_span]:leading-[1]"
           >
             <span className="block whitespace-nowrap">
               Clases de inglés{' '}
@@ -62,19 +45,22 @@ export function KidsClassesCtaSection() {
           </h2>
         </div>
 
-        <div className="mt-10 -mx-4 overflow-x-auto px-4 sm:-mx-0 sm:px-0">
-          <div className="mx-auto flex w-full max-w-md flex-col gap-4 sm:mx-auto sm:w-max sm:flex-row sm:flex-nowrap sm:justify-center sm:gap-5">
+        <div className="mt-10 -mx-4 overflow-x-auto px-4 sm:mt-12 sm:-mx-0 sm:px-0">
+          <div className="flex w-full flex-col gap-4 sm:mx-auto sm:w-max sm:flex-row sm:flex-nowrap sm:justify-center sm:gap-5">
             <a
               href={whatsappHref}
               {...(WHATSAPP_PHONE
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {})}
-              className="font-eastman inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-lg bg-fyr-blue px-5 py-2.5 text-lg font-bold tracking-tighter text-white shadow-md transition-[opacity,transform] hover:opacity-95 active:scale-[0.99] sm:w-auto sm:gap-3 sm:px-6 sm:py-3 sm:text-2xl"
+              className="font-eastman inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-2 rounded-sm bg-fyr-blue px-4 py-2 text-base font-bold shadow-md transition-[opacity,transform] hover:opacity-95 active:scale-[0.99] sm:w-auto sm:min-w-[240px] sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-lg md:min-w-[260px] md:gap-3 md:px-6 md:py-3 md:text-xl lg:text-2xl xl:text-3xl"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
-                <WhatsAppGlyph className="h-5 w-5" />
+              <span
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white sm:h-11 sm:w-11 md:h-12 md:w-12"
+                aria-hidden
+              >
+                <WhatsAppGlyph className="h-[1.35rem] w-[1.35rem] sm:h-6 sm:w-6 md:h-7 md:w-7" />
               </span>
-              <span className="text-left">
+              <span className="whitespace-nowrap text-left">
                 <span className="text-white">Empieza tu </span>
                 <span className="text-fyr-orange">futuro</span>
                 <span className="text-white"> hoy</span>
@@ -83,13 +69,19 @@ export function KidsClassesCtaSection() {
 
             <a
               href="#informacion"
-              className="font-eastman inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-lg bg-fyr-lime px-5 py-2.5 text-lg font-bold tracking-tighter text-fyr-blue shadow-md transition-[opacity,transform] hover:opacity-95 active:scale-[0.99] sm:w-auto sm:gap-3 sm:px-6 sm:py-3 sm:text-2xl"
+              className="font-eastman inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-2 rounded-sm bg-fyr-lime px-4 py-2 text-base font-bold text-fyr-blue shadow-md transition-[opacity,transform] hover:opacity-95 active:scale-[0.99] sm:w-auto sm:min-w-[240px] sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-lg md:min-w-[260px] md:gap-3 md:px-6 md:py-3 md:text-xl lg:text-2xl xl:text-3xl"
             >
-              <span>
+              <span className="whitespace-nowrap">
                 <span className="text-white">Más </span>
                 <span className="text-fyr-blue">información</span>
               </span>
-              <PointerIcon className="h-6 w-6 shrink-0 text-white sm:h-7 sm:w-7" />
+              <img
+                src="/cursor.png"
+                alt=""
+                className="h-7 w-7 shrink-0 sm:h-8 sm:w-8 md:h-12 md:w-12"
+                decoding="async"
+                aria-hidden
+              />
             </a>
           </div>
         </div>

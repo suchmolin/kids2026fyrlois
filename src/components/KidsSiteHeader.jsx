@@ -1,17 +1,17 @@
 export function KidsSiteHeader() {
   return (
-    <header className="bg-white px-4 py-4 sm:px-6 sm:py-5 lg:px-10 lg:py-6">
-      <div className="mx-auto relative flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-center sm:gap-6">
-        <a href="/" className="inline-block shrink-0 absolute left-10">
+    <header className="w-full min-w-0 overflow-x-hidden bg-white px-4 pt-4 pb-3 sm:px-6 sm:pt-5 sm:pb-4 lg:px-10 lg:pt-6">
+      <div className="mx-auto flex w-full min-w-0 max-w-full flex-col items-center gap-3 sm:flex-row sm:flex-nowrap sm:justify-center sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8">
+        <a href="/" className="inline-block max-w-full shrink-0">
           <img
             src="/logoFyrlois.png"
             alt="Fyr Lois"
-            className="h-12 w-auto sm:h-14 lg:h-16"
-            width={240}
-            height={64}
+            className="h-16 w-auto max-w-[min(100%,300px)] object-contain object-left sm:h-[4.25rem] md:h-20 lg:h-[4.5rem] xl:h-20 2xl:h-[5rem]"
+            width={320}
+            height={86}
           />
         </a>
-        <p className="font-eastman text-center text-xl font-bold leading-tight tracking-tighter whitespace-nowrap sm:text-right sm:text-2xl lg:text-5xl">
+        <p className="font-eastman w-full min-w-0 max-w-full text-center text-[clamp(0.9375rem,3.4vw+0.35rem,1.375rem)] font-bold leading-tight tracking-tight whitespace-nowrap sm:max-w-none sm:w-auto sm:shrink-0 sm:text-[clamp(1.375rem,2.35vw+0.65rem,2.375rem)] md:text-[clamp(1.5rem,2.5vw+0.5rem,2.625rem)] lg:text-[clamp(1.625rem,2.35vw+0.65rem,2.75rem)] xl:text-[clamp(1.75rem,2.2vw+0.75rem,2.875rem)]">
           <span className="text-fyr-blue">¡Su crecimiento </span>
           <span className="text-fyr-orange">comienza aquí!</span>
         </p>
