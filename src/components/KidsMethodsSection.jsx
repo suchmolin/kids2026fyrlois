@@ -49,7 +49,7 @@ export function KidsMethodsSection() {
         <img
           src="/kidsphoto.png"
           alt=""
-          className="mx-auto mt-8 w-full max-w-2xl rounded-2xl object-cover sm:mt-10 md:mt-12"
+          className="mx-auto mt-8 w-full max-w-5xl rounded-2xl object-cover sm:mt-10 md:mt-12"
           decoding="async"
         />
       </div>

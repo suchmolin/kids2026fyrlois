@@ -1,5 +1,4 @@
-const WHATSAPP_PHONE = import.meta.env.VITE_WHATSAPP_PHONE?.replace(/\D/g, '') ?? ''
-const whatsappHref = WHATSAPP_PHONE ? `https://wa.me/${WHATSAPP_PHONE}` : '#'
+import { WHATSAPP_PHONE, whatsappHref } from '../config/whatsapp.js'
 
 const bandMinHeight =
   'min-h-[min(56dvh,420px)] sm:min-h-[min(52dvh,480px)] md:min-h-[min(50dvh,540px)] lg:min-h-[min(50dvh,600px)] xl:min-h-[min(52dvh,680px)]'
