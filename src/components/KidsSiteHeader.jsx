@@ -6,7 +6,7 @@ export function KidsSiteHeader() {
           <img
             src="/logoFyrlois.png"
             alt="Fyr Lois"
-            className="h-16 w-auto max-w-[min(100%,300px)] object-contain object-left sm:h-[4.25rem] md:h-20 lg:h-[4.5rem] xl:h-20 2xl:h-[5rem]"
+            className="h-24 w-auto max-w-[min(100%,460px)] object-contain object-left sm:h-[6.125rem] md:h-[7.75rem] lg:h-[8rem] xl:h-36 2xl:h-40"
             width={320}
             height={86}
           />
