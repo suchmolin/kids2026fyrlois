@@ -1,94 +1,74 @@
-import { useState } from 'react'
+const WHATSAPP_PHONE = import.meta.env.VITE_WHATSAPP_PHONE?.replace(/\D/g, '') ?? ''
+const whatsappHref = WHATSAPP_PHONE ? `https://wa.me/${WHATSAPP_PHONE}` : '#'
+
+const bandMinHeight =
+  'min-h-[min(56dvh,420px)] sm:min-h-[min(52dvh,480px)] md:min-h-[min(50dvh,540px)] lg:min-h-[min(50dvh,600px)] xl:min-h-[min(52dvh,680px)]'
+
+const promoLinkClass =
+  'inline-block w-full max-w-[min(96vw,40rem)] shrink-0 rounded-xl outline-none ring-offset-2 transition-transform duration-200 ease-out hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-fyr-pink sm:max-w-[min(94vw,46rem)] md:max-w-[min(92vw,50rem)]'
+
+/* md+: más grande, pero con tope en vw para no tapar tanto el fondo think */
+const promoLinkClassLg =
+  'inline-block w-full shrink-0 rounded-xl outline-none ring-offset-2 transition-transform duration-200 ease-out hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-fyr-pink ' +
+  'max-w-[min(56vw,34rem)] sm:max-w-[min(54vw,38rem)] md:max-w-[min(52vw,44rem)] lg:max-w-[min(50vw,50rem)] xl:max-w-[min(48vw,56rem)] 2xl:max-w-[min(46vw,60rem)]'
+
+function PromoWhatsAppLink({ className }) {
+  return (
+    <a
+      href={whatsappHref}
+      {...(WHATSAPP_PHONE
+        ? { target: '_blank', rel: 'noopener noreferrer' }
+        : {})}
+      className={className}
+      aria-label="Escribir por WhatsApp"
+    >
+      <img
+        src="/promo25.png"
+        alt=""
+        className="h-auto w-full object-contain"
+        width={1200}
+        height={700}
+        decoding="async"
+      />
+    </a>
+  )
+}
 
 export function KidsLeadSection() {
-  const [sent, setSent] = useState(false)
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    setSent(true)
-  }
-
   return (
     <section
       id="prueba-nivel"
-      className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16"
-      aria-labelledby="kids-lead-heading"
+      className="relative isolate w-full overflow-x-hidden bg-white"
+      aria-label="Contacto por WhatsApp para prueba de nivel"
     >
-      <div className="relative mx-auto grid max-w-6xl items-center gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8 xl:gap-12">
-        <div className="relative flex justify-center lg:justify-start">
+      {/* max-md (móvil): think arriba, promo abajo */}
+      <div className="flex flex-col md:hidden">
+        <div className="relative w-full min-h-[min(48dvh,340px)] sm:min-h-[min(52dvh,400px)]">
           <img
-            src="/kidsteacher.png"
+            src="/think.png"
             alt=""
-            className="max-h-[min(55dvh,480px)] w-full max-w-lg object-contain object-bottom sm:max-h-[min(70dvh,520px)]"
+            className="absolute inset-0 h-full w-full object-cover object-[10%_center] sm:object-left"
+       
             decoding="async"
           />
         </div>
+        <div className="flex w-full justify-center px-4 pb-0 pt-0 sm:px-6 sm:pb-5 sm:pt-3 -mt-8 sm:-mt-0">
+          <PromoWhatsAppLink className={promoLinkClass} />
+        </div>
+      </div>
 
-        <div className="relative z-[1] lg:py-4">
-          <div className="-mx-4 px-4 sm:-mx-0 sm:px-0">
-            <h2
-              id="kids-lead-heading"
-              className="font-eastman inline-block min-w-0 text-left text-xl font-bold leading-[0.85] tracking-tighter sm:text-2xl sm:leading-[0.82] md:text-3xl md:leading-[0.8] lg:text-4xl xl:text-5xl"
-            >
-              <span className="block w-max max-w-none whitespace-nowrap text-[#F39200]">
-                Da el primer paso:
-              </span>
-              <span className="mt-0.5 block w-max max-w-none whitespace-nowrap text-[#002060] sm:mt-1 md:mt-1.5">
-                conoce tu nivel de inglés hoy.
-              </span>
-            </h2>
-          </div>
-
-          <p className="font-eastman mt-3 text-lg font-bold tracking-tighter text-fyr-lime sm:mt-4 sm:text-2xl md:text-3xl lg:text-[1.75rem] xl:text-4xl">
-            Agenda tu prueba de nivel
-          </p>
-
-          <form
-            className="mt-6 max-w-xl space-y-4 sm:mt-8 sm:space-y-5 md:mt-10"
-            onSubmit={handleSubmit}
-          >
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-              <label
-                htmlFor="kids-email"
-                className="font-eastman shrink-0 text-sm font-bold tracking-tighter text-fyr-blue sm:w-40 sm:text-base"
-              >
-                Correo <br className="hidden sm:block" /> electrónico
-              </label>
-              <input
-                id="kids-email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="font-eastman min-h-11 w-full flex-1 rounded-full border-0 bg-neutral-200 px-4 py-2.5 text-fyr-blue outline-none ring-2 ring-transparent transition focus:ring-fyr-pink/40"
-              />
-            </div>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-              <label
-                htmlFor="kids-phone"
-                className="font-eastman shrink-0 text-sm font-bold tracking-tighter text-fyr-blue sm:w-40 sm:text-base"
-              >
-                Número de contacto
-              </label>
-              <input
-                id="kids-phone"
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-                required
-                className="font-eastman min-h-11 w-full flex-1 rounded-full border-0 bg-neutral-200 px-4 py-2.5 text-fyr-blue outline-none ring-2 ring-transparent transition focus:ring-fyr-pink/40"
-              />
-            </div>
-
-            <div className="mx-auto flex w-full max-w-xs justify-center pt-1">
-              <button
-                type="submit"
-                className="font-eastman rounded-full bg-fyr-pink px-18 py-3 text-lg font-bold tracking-tighter text-white shadow-md transition hover:opacity-95 active:scale-[0.99] sm:text-xl md:text-2xl"
-              >
-                {sent ? '¡Gracias!' : 'Enviar'}
-              </button>
-            </div>
-          </form>
+      {/* md+: fondo think + promo a la derecha */}
+      <div
+        className={`relative hidden w-full flex-col md:flex ${bandMinHeight}`}
+      >
+        <img
+          src="/think.png"
+          alt=""
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-left"
+          decoding="async"
+        />
+        <div className="relative z-10 flex w-full min-w-0 flex-1 items-center justify-end overflow-x-clip px-4 py-10 sm:px-8 sm:py-12 md:px-10 md:py-14 lg:px-12 lg:py-16 xl:px-14">
+          <PromoWhatsAppLink className={promoLinkClassLg} />
         </div>
       </div>
     </section>
