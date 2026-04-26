@@ -38,7 +38,7 @@ export function KidsClassesCtaSection() {
               {...(WHATSAPP_PHONE
                 ? { target: '_blank', rel: 'noopener noreferrer' }
                 : {})}
-              className="font-eastman inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-2 rounded-sm bg-fyr-blue px-4 py-2 text-base font-bold shadow-md transition-[opacity,transform] hover:opacity-95 active:scale-[0.99] sm:w-auto sm:min-w-[240px] sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-lg md:min-w-[260px] md:gap-3 md:px-6 md:py-3 md:text-xl lg:text-2xl xl:text-3xl"
+              className="whatsapp-link font-eastman inline-flex min-h-0 w-full shrink-0 items-center justify-center gap-2 rounded-sm bg-fyr-blue px-4 py-2 text-base font-bold shadow-md transition-[opacity,transform] hover:opacity-95 active:scale-[0.99] sm:w-auto sm:min-w-[240px] sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-lg md:min-w-[260px] md:gap-3 md:px-6 md:py-3 md:text-xl lg:text-2xl xl:text-3xl"
             >
               <img
                 src="/ws.png"

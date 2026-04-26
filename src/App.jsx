@@ -5,10 +5,11 @@ import { KidsMethodsSection } from './components/KidsMethodsSection.jsx'
 import { KidsSiteHeader } from './components/KidsSiteHeader.jsx'
 import { KidsTestimonialSection } from './components/KidsTestimonialSection.jsx'
 import { KidsWhySection } from './components/KidsWhySection.jsx'
+import { WhatsAppFloatButton } from './components/WhatsAppFloatButton.jsx'
 
 function App() {
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-hidden bg-white">
+    <div className="flex min-h-dvh min-w-0 flex-col overflow-x-hidden bg-white">
       <KidsSiteHeader />
 
       <main className="min-w-0 flex-1 bg-white">
@@ -21,6 +22,7 @@ function App() {
         {/*
         */}
       </main>
+      <WhatsAppFloatButton />
     </div>
   )
 }

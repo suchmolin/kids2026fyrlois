@@ -8,3 +8,10 @@ const digits = (import.meta.env.VITE_WHATSAPP_PHONE ?? DEFAULT_DISPLAY).replace(
 
 export const WHATSAPP_PHONE = digits
 export const whatsappHref = digits ? `https://wa.me/${digits}` : '#'
+
+/** Abre WhatsApp con texto prellenado (UTF-8). */
+export function whatsappHrefWithText(message) {
+  if (!digits) return whatsappHref
+  const q = typeof message === 'string' ? encodeURIComponent(message) : ''
+  return q ? `${whatsappHref}?text=${q}` : whatsappHref
+}

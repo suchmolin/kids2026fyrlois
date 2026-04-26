@@ -18,7 +18,7 @@ function PromoWhatsAppLink({ className }) {
       {...(WHATSAPP_PHONE
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {})}
-      className={className}
+      className={`whatsapp-link ${className}`}
       aria-label="Escribir por WhatsApp"
     >
       <img
